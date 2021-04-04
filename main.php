@@ -11,35 +11,35 @@
 	</form>
 	<br />
 	<?php
-	if (!empty(isset($_POST["submit"])))
-	{
-		if (isset($_POST["pseudo"]))
+		if (!empty(isset($_POST["submit"])))
 		{
-			$matches = array();
-			$pseudo = $_POST["pseudo"];
-			foreach (glob("databases/*") as $file) 
+			if (isset($_POST["pseudo"]))
 			{
-				$handle = @fopen($file, "r");
-				if ($handle)
+				$matches = array();
+				$pseudo = $_POST["pseudo"];
+				foreach (glob("databases/*") as $file) 
 				{
-				    while (!feof($handle))
-				    {
-				        $buffer = fgets($handle);
-				        if(strpos($buffer, $pseudo) !== FALSE) 
-				        {
-				            $matches[] = $buffer;
-				        }
-				    }
-				    fclose($handle);
+					$handle = @fopen($file, "r");
+					if ($handle)
+					{
+					    while (!feof($handle))
+					    {
+					        $buffer = fgets($handle);
+					        if (strpos($buffer, $pseudo) !== FALSE)
+					        {
+					            $matches[] = $buffer;
+					        }
+					    }
+					    fclose($handle);
+					}
+				}
+				$result = array_unique($matches, SORT_REGULAR);
+				foreach ($result as $key => $value) 
+				{
+					echo "<p>" . $key . $value . "</p>";
 				}
 			}
-			$result = array_unique($matches, SORT_REGULAR);
-			foreach($result as $key => $value) 
-			{
-				echo $key . $value;
-			}
 		}
-	}
 	?>
 </body>
 <style>
