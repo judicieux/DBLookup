@@ -25,14 +25,14 @@
 				    while (!feof($handle))
 				    {
 				        $buffer = fgets($handle);
-				        if(strpos($buffer, $pseudo) !== FALSE)
+				        if (strpos($buffer, $pseudo) !== FALSE)
 				            $matches[] = $buffer;
 				    }
 				    fclose($handle);
 				}
 			}
 			$result = array_unique($matches, SORT_REGULAR);
-			foreach($result as $key => $value) 
+			foreach ($result as $key => $value) 
 			{
 				echo $key . $value;
 			}
