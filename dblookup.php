@@ -46,7 +46,7 @@
 	body
 	{
 		background-color:black;
-		color:red;
+		color:purple;
 		font-family: Arial;
 		text-align:center;
 	}
