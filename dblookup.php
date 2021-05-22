@@ -2,7 +2,7 @@
 <html>
 <body>
 	<h1>Database Lookup</h1>
-	<img src="https://image.noelshack.com/fichiers/2021/13/7/1617495812-original.gif" />
+	<img src="https://image.noelshack.com/fichiers/2021/20/6/1621717338-ezgif-com-gif-maker-6.gif" />
 	<br /><br />
 	<form method="POST">
 		<input type="text" name="pseudo" />
